@@ -7,10 +7,10 @@ echo "Username must start with a lower case character"
 echo "Username must be between 3 to 12 characters"
 
 read USERNAME
-while echo "$USERNAME" | egrep -E -v "^[a-z][0-9]{5}$" > /dev/null 2>&1
+while echo "$USERNAME" | egrep -E -v "^[a-z][a-z0-9_]{3,11}$" > /dev/null 2>&1
 do
-	echo "You must enter a valid Username -must start with a lower case character, only 3-12 characters, and can only use lower case characters, numbers, or underscores!"
-	echo "Enter a five-digit ZIP code: "
+	echo "Invalid Username -must follow all rules stated above!"
+	echo "Please enter a different username: "
 	read USERNAME
 done
 echo "Thank you"
